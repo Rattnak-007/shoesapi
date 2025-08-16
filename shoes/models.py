@@ -29,7 +29,7 @@ class Shoe(models.Model):
     color = models.CharField(max_length=50)
     stock = models.PositiveIntegerField(default=0)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='shoes/', blank=True, null=True)
+    image = models.ImageField(upload_to='shoe_images/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
