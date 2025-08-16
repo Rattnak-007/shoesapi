@@ -24,7 +24,7 @@ class Category(models.Model):
 class Shoe(models.Model):
     name = models.CharField(max_length=200)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='shoes')
-    categories = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    categories = models.ManyToManyField(Category, blank=True, related_name='shoes')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     size = models.CharField(max_length=20)
     color = models.CharField(max_length=50)
